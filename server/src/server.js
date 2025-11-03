@@ -1,10 +1,31 @@
 import express from 'express';
 import {ENV} from './lib/env.js';
-
+import Path from 'path';
 const app = express();
+
+
+
+const __dirname = Path.resolve();
+
+
+
+
+
+
+
+
 
 app.get('/',(req,res)=>{
     res.status(200).send({message: "hello"})})
+
+
+if (ENV.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+  app.get("/{*any}", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+  });
+}
 
 
 
