@@ -22,7 +22,8 @@ function HomePage() {
             className="flex items-center gap-3 hover:scale-105 transition-transform duration-200"
           >
             <div className="size-10 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-lg">
-              <SparklesIcon className="size-6 text-white" />
+              <img src="public/HomePageBanner.png" alt="Logo" className="size-6" />
+              {/*<SparklesIcon className="size-6 text-white" />*/}
             </div>
 
             <div className="flex flex-col">
@@ -116,9 +117,9 @@ function HomePage() {
 
           {/* RIGHT IMAGE */}
           <img
-            src="/HomePageBanner.png"
+            src="public/HomePageBanner.png"
             alt="CodeCollab Platform"
-            className="w-full h-auto rounded-3xl shadow-2xl border-4 border-base-100 hover:scale-105 transition-transform duration-500"
+            className="h-110 width-110 mx-15 rounded-3xl shadow-2xl border-4 border-base-100 hover:scale-105 transition-transform duration-500"
           />
         </div>
       </div>
