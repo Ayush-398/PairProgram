@@ -13,7 +13,7 @@ import { SignInButton } from "@clerk/clerk-react";
 function HomePage() {
   return (
     <div className="bg-gradient-to-br from-base-100 via-base-200 to-base-300">
-      {/* NAVBAR        bg-gradient-to-r from-slate-100 to-indigo-600  */}
+      {/* NAVBAR */}
       <nav className="bg-base-100/80 backdrop-blur-md border-b border-primary/20 sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto p-4 flex items-center justify-between">
           {/* LOGO */}
@@ -22,8 +22,7 @@ function HomePage() {
             className="flex items-center gap-3 hover:scale-105 transition-transform duration-200"
           >
             <div className="size-10 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-lg">
-              <img src="public/HomePageBanner.png" alt="Logo" className="size-6" />
-              {/*<SparklesIcon className="size-6 text-white" />*/}
+              <img src="/HomePageBanner.png" alt="Logo" className="size-6" />
             </div>
 
             <div className="flex flex-col">
@@ -117,9 +116,9 @@ function HomePage() {
 
           {/* RIGHT IMAGE */}
           <img
-            src="public/HomePageBanner.png"
+            src="/HomePageBanner.png"
             alt="CodeCollab Platform"
-            className="h-110 width-110 mx-15 rounded-3xl shadow-2xl border-4 border-base-100 hover:scale-105 transition-transform duration-500"
+            className="h-96 w-full object-cover rounded-3xl shadow-2xl border-4 border-base-100 hover:scale-105 transition-transform duration-500"
           />
         </div>
       </div>
