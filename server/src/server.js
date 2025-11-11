@@ -3,7 +3,8 @@ import {ENV} from './lib/env.js';
 import Path from 'path';
 import { connectDB } from './lib/db.js';
 import { clerkClient, requireAuth, getAuth, clerkMiddleware } from '@clerk/express'
-import {ChatRoutes} from "./routes/ChatRoutes.js";
+import ChatRoutes from "./routes/ChatRoutes.js";
+import sessionRoutes from "./routes/sessionRoutes.js";
 
 const app = express();
 const __dirname = Path.resolve();
@@ -11,7 +12,8 @@ app.use(clerkMiddleware())
 
 app.use(express.json());
 //app.use(cors({origin:ENV.CLIENT_URL,redentials:true}));
-app.use("/api/ChatRoutes",ChatRoutes)
+app.use("/api/chat", ChatRoutes)
+app.use("/api/sessions", sessionRoutes)
 app.get('/', requireAuth(), async (req, res) => {
      const { userId } = getAuth(req)
     const user = await clerkClient.users.getUser(userId)
