@@ -1,5 +1,5 @@
 import express from "express";
-import { requireAuth } from "@clerk/express";
+import { protectRoute } from "../middleware/protectRoute.js";
 
 import {
   createSession,
@@ -8,16 +8,16 @@ import {
   getMyRecentSessions,
   getSessionById,
   joinSession,
-} from "../controllers/sessionController.js";
+} from "../controller/sessionController.js";
 
 const router = express.Router();
 
-router.post("/", requireAuth(), createSession);
-router.get("/active", requireAuth(), getActiveSessions);
-router.get("/my-recent", requireAuth(), getMyRecentSessions);
+router.post("/", protectRoute, createSession); // Use protectRoute
+router.get("/active", protectRoute, getActiveSessions); // Use protectRoute
+router.get("/my-recent", protectRoute, getMyRecentSessions); // Use protectRoute
 
-router.get("/:id", requireAuth(), getSessionById);
-router.post("/:id/join", requireAuth(), joinSession);
-router.post("/:id/end", requireAuth(), endSession);
+router.get("/:id", protectRoute, getSessionById); // Use protectRoute
+router.post("/:id/join", protectRoute, joinSession); // Use protectRoute
+router.post("/:id/end", protectRoute, endSession); // Use protectRoute
 
 export default router;
