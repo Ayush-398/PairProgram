@@ -35,7 +35,7 @@ app.get('/', requireAuth(), async (req, res) => {
 
 if (ENV.NODE_ENV === "production") {
   app.use(express.static(Path.join(__dirname, "../frontend/dist"))); 
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => { 
   res.sendFile(path.join(__dirname, "../../client/dist/index.html"));
 });
 }
