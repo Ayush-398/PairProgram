@@ -12,7 +12,7 @@ import {
 
 const router = express.Router();
 
-router.post("/", protectRoute, createSession); // Use protectRoute
+router.post("/", protectRoute, createSession); 
 router.get("/active", protectRoute, getActiveSessions); // Use protectRoute
 router.get("/my-recent", protectRoute, getMyRecentSessions); // Use protectRoute
 
